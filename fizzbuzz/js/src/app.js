@@ -1,13 +1,11 @@
-// Impement fizzbuzz logic
-function fizzbuzz(number) {
-  return '0';
-}
-
-// Implement the wrapper
 function main() {
-   for(let i=0; i<10;i++) {
-     console.log(fizzbuzz(i));
-   }
+    var fizzbuzz = require('./fizzbuzz');
+    const n = Number(process.argv.slice(2)[0]);
+    if (!Number.isInteger(n)) {
+        console.error("You should enter a valid number as follow : 'npm run fizzbuzz YOUR_INTEGER_NUMBER'");
+        return null;
+    }
+    fizzbuzz.showResults(n)
 }
 
 main();
